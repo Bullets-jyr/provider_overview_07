@@ -16,4 +16,11 @@ class Babies {
       return 2;
     }
   }
+
+  Stream<String> bark() async* {
+    for (int i = 1; i < age; i++) {
+      await Future.delayed(Duration(seconds: 2));
+      yield 'Bark $i times';
+    }
+  }
 }
